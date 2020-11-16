@@ -46,14 +46,15 @@ function changeStyle() {
   if($(this).hasClass('complete')){
     $(this).removeClass('complete');
     $(this).addClass('cool');
-  }else{
-    // if it is cool class , remove cool and add complete
-    // if it is  hot class,  remove hot and add complete
-    // else ,   add complete
-
+  }else if($(this).hasClass('cool')){// if it is cool class , remove cool and add complete
+    $(this).removeClass('cool');
     $(this).addClass('complete');
+  }else if ($(this).hasClass('hot')){// if it is  hot class,  remove hot and add complete
+    $(this).removeClass('hot');
+    $(this).addClass('complete');
+  }else{
+    $(this).addClass('complete'); // else ,   add complete
   }
-
 }
 
 // delete by clicking the trash can
